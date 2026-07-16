@@ -91,4 +91,20 @@ wget <https://downloads.apache.org/spark/spark-4.1.2/spark-4.1.2-bin-hadoop3.tgz
 
 ```
 
-Intento de conexión:
+## Intento de conexión:
+### Configuracion del router
+Como nuestro router no tenia para poder conectarce al internet, nos toco preguntar como hacerlo a la inteligencia artificial para que nos podamos conectar por el network y de esa manera conectar las computadoras.
+Primero entramos a esta ip 192.168.1.1
+y nos dio la entra para entrar por usuario y contraseña al router conectado al cnt en el google edge
+<img width="1600" height="899" alt="image" src="https://github.com/user-attachments/assets/a1ff20e2-bb76-4667-a766-a1ed9762fc79" />
+Esta es la intergase nos salio errores probamos con 
+admin com usuario y como contraseña y nos dio errores, asi que decidimmos probar la coneccion al land buscamos la ipconfig
+en el cmd y nos dio diversas ip con el default Switch.
+
+Con esa informacion usamos la convinacion de teclas windows + r en el cual escribimos ncpa.cpl
+
+<img width="1390" height="703" alt="image" src="https://github.com/user-attachments/assets/00cf9d54-1b4c-4325-9e1e-175cbf5f1df1" />
+
+Segun la inteligencia artificial 
+
+
