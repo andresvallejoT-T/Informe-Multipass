@@ -223,6 +223,28 @@ En la compu de mi compañero adnres vallejo debido a la poca cantidad de memoria
 
 <img width="1007" height="630" alt="image" src="https://github.com/user-attachments/assets/1e9eca2d-0d11-4d8a-99a1-36f1fde4b090" />
 
+## Reporte de errores
+### Pérdida de un Worker durante el procesamiento distribuido en Apache Spark
+Durante la implementación de un clúster de Apache Spark usando Multipass, se configuró una arquitectura distribuida compuesta por un nodo Master y varios nodos Worker, ubicados en diferentes computadoras conectadas a la misma red local.
 
+La configuración inicial fue exitosa. Todos los nodos establecieron comunicación con el Master, los Workers aparecían registrados correctamente y las pruebas de conectividad (ping) y verificación de procesos (jps) confirmaban el funcionamiento normal del clúster. Asimismo, Apache Zeppelin se encontraba conectado al Master y listo para ejecutar tareas de procesamiento distribuido.
+
+Durante la ejecución de una consulta sobre el conjunto de datos desde Apache Zeppelin, una de las computadoras que actuaba como Worker dejó de responder. A partir de ese momento, el nodo dejó de aparecer registrado en el Master y dejó de participar en el procesamiento distribuido.
+
+Es importante destacar que el resto de los nodos del clúster continuaron funcionando con normalidad. Los demás Workers permanecieron conectados al Master y la ejecución del clúster no presentó fallos adicionales, por lo que el problema quedó aislado únicamente al equipo afectado.
+
+### Posible causa
+
+No fue posible determinar con certeza la causa exacta del incidente únicamente a partir de las verificaciones realizadas.
+
+Sin embargo, una posible explicación es que el equipo afectado contara con recursos de hardware limitados en comparación con los demás nodos. Durane el procesamiento del archivo CSV, la carga de trabajo pudo haber provocado que el proceso Worker finalizara inesperadamente debido a limitaciones de CPU o memoria disponibles. 
+
+Esta hipótesis se basa en el comporamiento observado durante la ejecución.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9da4062d-e20e-4c72-9439-2f53fc58f0bd"
+       alt="Arquitectura del clúster"
+       width="700">
+</p>
 
 
