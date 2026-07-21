@@ -105,6 +105,28 @@ Con esa informacion usamos la convinacion de teclas windows + r en el cual escri
 
 <img width="1390" height="703" alt="image" src="https://github.com/user-attachments/assets/00cf9d54-1b4c-4325-9e1e-175cbf5f1df1" />
 
-Segun la inteligencia artificial 
+En este apartado estamos configurando unos exports para que todos los workers tengan la misma configuracion a parte de la configuracion de spark
+
+<img width="1222" height="127" alt="image" src="https://github.com/user-attachments/assets/9d210fad-e01b-491b-89d1-90b285d2ac3a" />
+
+Despues de haber ejecutado cada configuracion en las diferentes compus ahora revisamos que esten trabajando los 3 workers en la computadora master
+
+<img width="1130" height="592" alt="image" src="https://github.com/user-attachments/assets/8820a057-dd93-415d-8871-e5d7ef3a657d" />
+
+Luego con un csv acerca de un conjunto de datos sobre precios e ingresos del mercado de los videojuegos fuimos probando para saber cuanto consume y en cuanto tiempo esta el proceso
+
+<img width="1191" height="617" alt="image" src="https://github.com/user-attachments/assets/9224e0db-5bd9-4a94-933b-991f1712488d" />
+
+Debido a la poca cantidad de memoria ram tuvimos un resultado de 7 min pero a la hora de actualizar y revisar de nuevo fue aumentando el tiempo por la poca cantidad de memoria que teniamos 
+
+<img width="1135" height="586" alt="image" src="https://github.com/user-attachments/assets/51e3ae2c-450d-480d-8b28-1d07b2c7158a" />
+
+<img width="1132" height="592" alt="image" src="https://github.com/user-attachments/assets/0ce36ef3-cc3c-4dfa-9d14-d306da345fea" />
+
+En la compu de mi compañero adnres vallejo debido a la poca cantidad de memoria que tiene utilizo 
+
+<img width="1007" height="630" alt="image" src="https://github.com/user-attachments/assets/1e9eca2d-0d11-4d8a-99a1-36f1fde4b090" />
+
+
 
 
