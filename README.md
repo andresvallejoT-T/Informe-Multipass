@@ -91,6 +91,102 @@ wget <https://downloads.apache.org/spark/spark-4.1.2/spark-4.1.2-bin-hadoop3.tgz
 
 ```
 
+## Instalación de Apache Zeppelin — ÚNICAMENTE en la máquina Master
+
+Este paso es el que distingue a la máquina Master del resto de nodos: **la instalación de Zeppelin se realiza exclusivamente aquí**, dado que actúa como el notebook desde el cual se redacta y ejecuta el código que luego se distribuye a los workers.
+
+```
+cd ~/software
+wget https://downloads.apache.org/zeppelin/zeppelin-0.12.1/zeppelin-0.12.1-bin-all.tgz
+tar -xzf zeppelin-0.12.1-bin-all.tgz
+sudo mv zeppelin-0.12.1-bin-all /opt/zeppelin
+```
+
+Establecer las variables de entorno:
+
+```
+export ZEPPELIN_HOME=/opt/zeppelin
+export PATH=$ZEPPELIN_HOME/bin:$PATH
+```
+
+---
+
+## Configuración de Zeppelin para vincularse al cluster — únicamente en el Master
+
+```
+cd $ZEPPELIN_HOME/conf
+cp zeppelin-env.sh.template zeppelin-env.sh
+cp zeppelin-site.xml.template zeppelin-site.xml
+nano zeppelin-env.sh
+```
+
+Definir lo siguiente:
+
+```
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export SPARK_HOME=/opt/spark
+export MASTER=spark://<IP_DEL_MASTER>:7077
+```
+
+En el archivo `zeppelin-site.xml`, permitir que el servidor quede a la escucha en todas las interfaces de red:
+
+```
+<property>
+  <n>zeppelin.server.addr</n>
+  <value>0.0.0.0</value>
+</property>
+```
+
+---
+
+## Puesta en marcha de Zeppelin — exclusivamente en el Master
+
+```
+$ZEPPELIN_HOME/bin/zeppelin-daemon.sh start
+```
+
+Comprobar que el proceso esté activo:
+
+```
+jps
+```
+
+Ingresar desde el navegador de cualquier equipo:
+
+```
+http://<IP_DEL_MASTER>:8080
+```
+<img width="1917" height="397" alt="image" src="https://github.com/user-attachments/assets/34bd01ea-a544-45a0-82a2-8ba55cad9c41" />
+
+
+---
+
+## Verificación final del cluster distribuido
+
+Desde un notebook nuevo dentro de Zeppelin, correr:
+
+```
+%spark
+val datos = spark.range(1000000)
+printf("Total: %d%n", datos.count())
+```
+
+Si el cálculo se ejecuta sin errores y, al inspeccionar la Spark Application UI ( `http://<IP_DEL_MASTER>:4040` ), se aprecian tareas corriendo en paralelo sobre ambos workers, esto confirma que el cluster distribuido está operando correctamente.
+
+*(En este punto puede añadirse una captura de la Spark UI mostrando las tareas ejecutándose en ambos workers)*
+
+---
+
+## Resumen de tareas por equipo
+
+| Componente | Máquina Master | Máquina Worker 1 | Máquina Worker 2 | Máquina Worker 3 |
+|---|---|---|---|---|
+| Java | Sí | Sí | Sí | Sí |
+| Apache Spark | Sí | Sí | Sí | Sí |
+| Apache Zeppelin | Sí (única instalación) | No | No | No |
+| Proceso `Master` | Sí | No | No | No |
+| Proceso `Worker` | opcional | Sí | Sí | Sí |
+
 ## Intento de conexión:
 ### Configuracion del router
 Como nuestro router no tenia para poder conectarce al internet, nos toco preguntar como hacerlo a la inteligencia artificial para que nos podamos conectar por el network y de esa manera conectar las computadoras.
