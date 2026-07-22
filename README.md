@@ -220,6 +220,11 @@ En la compu de mi compañero Andrés vallejo debido a la poca cantidad de memori
 
 <img width="1007" height="630" alt="image" src="https://github.com/user-attachments/assets/1e9eca2d-0d11-4d8a-99a1-36f1fde4b090" />
 
+En la compu de mi compañero Ricardo Rosales tenia un uso total de su memoria ram igual que mi compañero Andrés Vallejo
+
+<img width="968" height="567" alt="image" src="https://github.com/user-attachments/assets/fdb9ed64-720a-4579-8fe2-4edd476197c7" />
+
+
 ## Reporte de errores
 ### Pérdida de un Worker durante el procesamiento distribuido en Apache Spark
 Durante la implementación de un clúster de Apache Spark usando Multipass, se configuró una arquitectura distribuida compuesta por un nodo Master y varios nodos Worker, ubicados en diferentes computadoras conectadas a la misma red local.
