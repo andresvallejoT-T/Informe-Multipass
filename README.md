@@ -208,6 +208,8 @@ Despues de haber ejecutado cada configuración en las diferentes compus ahora re
 
 Luego con un csv acerca de un conjunto de datos sobre precios e ingresos del mercado de los videojuegos fuimos probando para saber cuanto consume y en cuanto tiempo esta el proceso
 
+Link del CSV: https://www.kaggle.com/datasets/amith1707/video-game-market-price-and-revenue-dataset?resource=download 
+
 <img width="1191" height="617" alt="image" src="https://github.com/user-attachments/assets/9224e0db-5bd9-4a94-933b-991f1712488d" />
 
 Debido a la poca cantidad de memoria ram tuvimos un resultado de 7 min pero a la hora de actualizar y revisar de nuevo fue aumentando el tiempo por la poca cantidad de memoria que teniamos 
@@ -223,6 +225,7 @@ En la compu de mi compañero Andrés vallejo debido a la poca cantidad de memori
 En la compu de mi compañero Ricardo Rosales tenia un uso total de su memoria ram igual que mi compañero Andrés Vallejo
 
 <img width="968" height="567" alt="image" src="https://github.com/user-attachments/assets/fdb9ed64-720a-4579-8fe2-4edd476197c7" />
+
 
 
 ## Reporte de errores
